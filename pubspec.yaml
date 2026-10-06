@@ -1,1 +1,29 @@
+name: abayazeed_link_manager
+description: حلول متكاملة لإدارة شبكات Starlink وميكروتك وطباعة الكروت
+publish_to: 'none'
+version: 5.0.0+1
 
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^2.5.1
+  go_router: ^14.0.0
+  dio: ^5.4.1
+  pdf: ^3.10.8
+  printing: ^5.12.0
+  flutter_svg: ^2.0.10+1
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
