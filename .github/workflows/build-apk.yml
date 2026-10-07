@@ -27,6 +27,13 @@ jobs:
       - name: Create Android files
         run: flutter create --platforms android --org com.abayazeedlinkmanager .
 
+      - name: Set app label
+        run: sed -i 's|android:label="[^"]*"|android:label="أبا يزيد لنك منجر"|' android/app/src/main/AndroidManifest.xml
+
+      - name: Allow internet and cleartext HTTP
+        run: |
+          sed -i 's|<application|<uses-permission android:name="android.permission.INTERNET"/>\n    <application android:usesCleartextTraffic="true"|' android/app/src/main/AndroidManifest.xml
+
       - name: Install dependencies
         run: flutter pub get
 
