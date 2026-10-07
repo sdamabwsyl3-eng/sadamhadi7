@@ -9,10 +9,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final base = ThemeData.dark(useMaterial3: true);
+
     return MaterialApp(
       title: 'أبا يزيد لنك منجر',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(useMaterial3: true),
+      locale: const Locale('ar'),
+      builder: (context, child) => Directionality(
+        textDirection: TextDirection.rtl,
+        child: child!,
+      ),
+      theme: base.copyWith(
+        textTheme: base.textTheme.apply(fontFamily: 'IBMPlexSansArabic'),
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('أبا يزيد لنك منجر'),
